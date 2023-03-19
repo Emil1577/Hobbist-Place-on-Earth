@@ -3,8 +3,8 @@
     "version": "0.1.0",
     "description": "Niche hobby ranking form that user can upvotes hobbies and populates a list of hobbies in descending order.",
     "main": "server/server.js",
-    "engines":{
-        "node":"16.x"
+    "engines": {
+        "node": "16.x"
     },
     "scripts": {
         "start": "node server/server.js",
@@ -30,6 +30,7 @@
         "concurrently": "^7.6.0"
     },
     "dependencies": {
-        "dotenv": "^16.0.3"
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2"
     }
 }
