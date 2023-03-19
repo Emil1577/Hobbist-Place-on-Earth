@@ -7,7 +7,12 @@ const { authMiddleware } = require('./utils/auth');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
-const PORT = process.env.PORT || 3001;
+// const PORT = process.env.PORT || 3001;
+
+app.listen(process.env.PORT || 3001, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
+
 const app = express();
 const server = new ApolloServer({
   typeDefs,
@@ -15,9 +20,7 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
-app.listen(process.env.PORT || 3001, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
