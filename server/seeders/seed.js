@@ -24,8 +24,8 @@ const seedDatabase = async () => {
         await User.create(userSeeds);
         console.log('User data seeded');
 
-        // await Comment.create(commentSeeds);
-        // console.log('Comment data seeded');
+        await Comment.create(commentSeeds);
+        console.log('Comment data seeded');
 
         console.log('Seeding process complete!');
         // mongoose.set('strictQuery', true); // Add this line here
